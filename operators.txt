@@ -1,0 +1,31 @@
+equal operator ==
+<?php
+ 
+// Variable contains integer value
+$x = 999;
+ 
+// Variable contains string value
+$y = '999';
+ 
+// Compare $x and $y
+if ($x == $y)
+    echo 'Same content';
+else
+    echo 'Different content';
+?>
+
+identical operator ===
+<?php
+ 
+// Variable contains integer value
+$x = 999;
+ 
+// Variable contains string value
+$y = '999';
+ 
+// Compare $x and $y
+if ($x === $y)
+    echo 'Data type and value both are same';
+else
+    echo 'Data type or value are different';
+?>

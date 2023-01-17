@@ -1,0 +1,10 @@
+<?php
+//starting the  session
+session_start();
+//naming the session in the $_SESSION super global variabe
+$_SESSION['userID'];
+
+
+//destroying the session
+session_destroy();
+?>

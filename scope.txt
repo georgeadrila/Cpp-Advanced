@@ -1,0 +1,66 @@
+//local scope
+<?php
+  
+$num = 60;
+  
+function local_var() {
+      
+    // This $num is local to this function
+    // the variable $num outside this function
+    // is a completely different variable
+    $num = 50;
+    echo "local num = $num <br>";
+}
+  
+local_var();
+  
+// $num outside function local_var() is a
+// completely different variable than that of
+// inside local_var()
+echo "Variable num outside local_var() function is $num \n";
+  
+?>
+
+// global variable
+<?php
+  
+$num = 20;
+  
+// Function to demonstrate use of global variable
+function global_var() {
+      
+    // We have to use global keyword before
+    // the variable $num to access within
+    // the function
+    global $num;
+    echo "Variable num inside function : $num \n";
+}
+  
+global_var();
+echo "Variable num outside function : $num \n";
+  
+?>
+
+//static variable
+<?php
+  
+// Function to demonstrate static variables
+function static_var() {
+  
+    // Static variable
+    static $num = 5;
+    $sum = 2;
+          
+    $sum++;
+    $num++;
+          
+    echo $num, "\n";
+    echo $sum, "\n";
+}
+  
+
+static_var();
+
+static_var();
+  
+?>

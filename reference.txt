@@ -1,0 +1,12 @@
+
+function print_string( &$string ) {
+      
+    $string = "Sai pali \n";
+ 
+    print( $string );
+}
+  
+$string = "global sai pali \n";
+print_string( $string );
+print( $string );
+?>

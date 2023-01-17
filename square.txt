@@ -1,0 +1,94 @@
+<?php
+class rectangle{
+    //declaring properties
+    public $length = 0;
+    public $width = 0;
+
+    //method to get perimeter
+    public function getperimeter()
+    {
+        return (2 * ($this->length + $this->width));
+    }
+
+    public function getArea(){
+        return ($this->length + $this->width);
+    }
+}
+$obj1 = new rectangle;
+
+$obj1->length = 10;
+$obj1->width = 5;
+
+// call the methods
+echo "<h1>Area1: ".$obj1->getArea(). "</h1>";
+echo "<h1>Perimeter1: ".$obj1->getperimeter(). "</h1>";
+
+//we can use the same class again on different values
+$obj2 = new rectangle;
+
+$obj2->length =4;
+$obj2->length =5;
+
+echo "<h1>Area1: ".$obj2->getArea(). "</h1>";
+echo "<h1>Perimeter1: ".$obj2->getperimeter(). "</h1>";
+
+
+ class circle
+    {
+        //declaring props
+        public $radius = 4;
+        public $circum = 2;
+        public $pie = 3.142;
+
+
+        //method to get area
+    public function area(){
+        return ($this->pie*($this->radius)*2);
+    }
+
+    public function perim(){
+        return (2*($this->pie)*($this->radius*$this->radius));
+    }
+    
+    }
+
+  $obj1 = new circle;
+
+    $radius = 2;
+    $circum = 4;
+    $pie = 3.142;
+
+    echo "<h1>Area1: ".$obj1->area(). "</h1>";
+    echo "<h1>Perimeter1: ".$obj1->perim(). "</h1>";
+
+class circle{
+    public $radius;
+    //constructor
+    function __construct($r)
+    {
+        //initialising the class properties
+        $this->radius=$r;
+    }
+    function show_area(){
+        $area = 3.142 * $this->radius * $this->radius;
+        echo "The area of the circle is $area";
+    }
+    function show_peri()
+    {
+        $perimeter = 2 * 3.142 * $this->radius;
+        echo "The perimerter of the circle is $perimeter";
+    }
+
+    //destructor
+    public function __destruct()
+    {
+        echo "<br/> The class ". __CLASS__." was destroyed";
+    }
+}
+
+$obj = new circle(5);
+$obj->show_area();
+$obj->show_peri();
+
+
+?>

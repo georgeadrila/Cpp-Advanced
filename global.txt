@@ -1,0 +1,11 @@
+<?php
+// Declaring global variable
+$x = "sai";
+$y = "pali";
+$z = "institute";
+  
+// Display value
+// Concatenating String
+echo $x.$y.$z;
+  
+?>

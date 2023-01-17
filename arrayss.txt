@@ -1,0 +1,105 @@
+//indexed array
+<?php
+$name_one = array("Zack", "Anthony", "Ram", "Salim", "Raghav");
+ 
+
+echo "Accessing the 1st array elements directly:\n";
+echo $name_one[2], "\n";
+echo $name_one[0], "\n";
+echo $name_one[4], "\n";
+ 
+// Second way to create an indexed array
+$name_two[0] = "ZACK";
+$name_two[1] = "ANTHONY";
+$name_two[2] = "RAM";
+$name_two[3] = "SALIM";
+$name_two[4] = "RAGHAV";
+ 
+// Accessing the elements directly
+echo "Accessing the 2nd array elements directly:\n";
+echo $name_two[2], "\n";
+echo $name_two[0], "\n";
+echo $name_two[4], "\n";
+ 
+
+
+// associative arrays
+
+$name_one = array("Zack"=>"Zara", "Anthony"=>"Any",
+                  "Ram"=>"Rani", "Salim"=>"Sara",
+                  "Raghav"=>"Ravina");
+
+
+// Defining a multidimensional array
+$favorites = array(
+    array(
+        "name" => "Dave Punk",
+        "mob" => "5689741523",
+        "email" => "davepunk@gmail.com",
+    ),
+    array(
+        "name" => "Monty Smith",
+        "mob" => "2584369721",
+        "email" => "montysmith@gmail.com",
+    ),
+    array(
+        "name" => "John Flinch",
+        "mob" => "9875147536",
+        "email" => "johnflinch@gmail.com",
+    )
+);
+ 
+// Accessing elements
+echo "Dave Punk email-id is: " . $favorites[0]["email"], "\n";
+echo "John Flinch mobile number is: " . $favorites[2]["mob"];
+ 
+?>
+
+//write a menu driven program to the the following stack related operations. i) insert an element in stack. ii) delete an element from stack. iii) display the stack. iv) exit.
+$stack = array();
+$choice = 0;
+do
+{
+echo "1. Insert an element in stack
+
+";
+echo "2. Delete an element from stack
+
+";
+echo "3. Display the stack
+
+";
+echo "4. Exit
+
+";
+echo "Enter your choice: ";
+$choice = trim(fgets(STDIN));
+switch($choice)
+{
+case 1:
+echo "Enter the element to be inserted: ";
+$element = trim(fgets(STDIN));
+array_push($stack, $element);
+break;
+case 2:
+echo "Deleted element is: ".array_pop($stack)."
+
+";
+break;
+case 3:
+echo "Stack is: ";
+print_r($stack);
+break;
+case 4:
+echo "Exiting
+
+";
+
+break;
+default:
+echo "Invalid choice
+
+";
+}
+}while($choice != 4);
+?>

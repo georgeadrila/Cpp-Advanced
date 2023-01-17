@@ -1,0 +1,29 @@
+<?php
+session_start();
+include "./connection.php";
+$email = $_POST['email'];
+$password = $_POST['password'];
+if (!empty($email) && !empty($password)) {
+    $emailf = filter_var($email, FILTER_VALIDATE_EMAIL);
+    if ($emailf) {
+        $sql = "SELECT email, password, Unique_ID FROM kataleusers WHERE email = :email AND password = :password";
+        $query = $pdo->prepare($sql);
+        $query->bindValue(":email", $email);
+        $query->bindValue(":password", $password);
+        $query->execute();
+        $store = $query->fetch(PDO::FETCH_ASSOC);
+    if ($query->rowCount() > 0) {
+        $row = $store;
+        setcookie("user_ID", $row['Unique_ID'], time() + (86400 * 30 * 12), "/");
+        $_COOKIE['user_ID'] = $row['Unique_ID'];
+        echo "success";
+    } else {
+        echo "Ooops, Email or password is wrong!";
+    }
+    }else{
+        echo "'$email' is a wrong email. ";
+    }
+} else {
+    echo "All input fields are required";
+}
+?>

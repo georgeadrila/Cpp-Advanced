@@ -1,0 +1,38 @@
+<?php
+class gfg {
+      
+    function add () {
+        $a = 9 + 2 ;
+    }
+}
+  
+class gfg1 {
+    function tr() {
+        echo (4);
+    }
+}
+  
+print_r(get_declared_classes());
+?>
+
+<?php
+  
+// Create a class
+class GFG {
+  
+    public function func() {
+        var_dump(get_called_class());
+    }
+      
+    public function fun2() {
+        var_dump(get_called_class());
+    }
+}
+  
+$getClassMethod = get_class_methods('GFG');
+  
+foreach ($getClassMethod as $method) {
+    echo "$method\n";
+}
+  
+?>

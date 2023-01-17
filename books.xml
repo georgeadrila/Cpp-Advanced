@@ -1,0 +1,81 @@
+<?php
+// create an xml document which gives details of books available in ABC Bookshop from the following categories: 1) technical, 2) cooking, 3) yoga in the following format:
+// <books>
+// <book category="technical">
+// <title>PHP</title>
+// <author>ABC</author>
+// <price>100</price>
+// </book>
+// <book category="cooking">
+// <title>Indian Cooking</title>
+// <author>XYZ</author>
+// <price>200</price>
+// </book>
+// <book category="yoga">
+// <title>Yoga for Health</title>
+// <author>PQR</author>
+// <price>300</price>
+// </book>
+// </books>
+
+// create a xml document
+$dom = new DOMDocument('1.0', 'UTF-8');
+// create root element
+$root = $dom->createElement('books');
+$root = $dom->appendChild($root);
+
+// create book elements
+$book = $dom->createElement('book');
+$book = $root->appendChild($book);
+
+// create title elements
+$title = $dom->createElement('title');
+$title = $book->appendChild($title);
+
+// create text node
+$text = $dom->createTextNode('PHP');
+$text = $title->appendChild($text);
+
+// create author elements
+$author = $dom->createElement('author');
+$author = $book->appendChild($author);
+
+// create text node
+$text = $dom->createTextNode('ABC');
+$text = $author->appendChild($text);
+
+// create price elements
+$price = $dom->createElement('price');
+$price = $book->appendChild($price);
+
+// create text node
+$text = $dom->createTextNode('100');
+$text = $price->appendChild($text);
+
+// create book elements
+$book = $dom->createElement('book');
+$book = $root->appendChild($book);
+
+// create title elements
+$title = $dom->createElement('title');
+$title = $book->appendChild($title);
+
+// create text node
+$text = $dom->createTextNode('Indian Cooking');
+$text = $title->appendChild($text);
+
+// create author elements
+$author = $dom->createElement('author');
+$author = $book->appendChild($author);
+
+// create text node
+$text = $dom->createTextNode('XYZ');
+$text = $author->appendChild($text);
+
+// create price elements
+$price = $dom->createElement('price');
+$price = $book->appendChild($price);
+
+// create text node
+$text = $dom->createTextNode('200');
+$text = $price->appendChild($text);

@@ -1,0 +1,6 @@
+An array is a data structure that stores one or more similar type of values in a single value.
+
+Types of arrays:
+Numeric array: An array with a numeric index. values are stored and accessed in a linear format.
+
+Associative array: An array with strings as index. This stores element values in association with key values rather thana strict

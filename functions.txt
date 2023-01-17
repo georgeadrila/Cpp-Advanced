@@ -1,0 +1,23 @@
+1. //fopen()
+fopen(
+    string $filename,
+    string $mode,
+    bool $use_include_path = false,
+    ?resource $context = null
+)
+
+2. //fwrite
+fwrite(file, string, length)
+
+3. unlink()
+unlink($filename, $context)
+
+4. opendir()
+opendir ( string $path [, resource $context] );
+
+5. file_get_contents()
+file_get_contents($path, $include_path, $context, 
+                              $start, $max_length)
+
+6. fileatime()
+ fileatime($filename)

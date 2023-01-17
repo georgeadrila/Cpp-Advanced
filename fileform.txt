@@ -1,0 +1,9 @@
+<form class="swap__subscribe" enctype="multipart/form-data">
+                        <div class="">
+                            <p class="swap__description para1">
+                                Attach two pictures of your phone <br> front and back.
+                            </p>
+                            <input type="file" name="UDimg" accept="image/*" >
+                            <input type="file" name="UDimg2" accept="image/*" >
+                        </div>
+</form>

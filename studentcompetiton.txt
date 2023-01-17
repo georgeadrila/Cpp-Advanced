@@ -1,0 +1,88 @@
+<?php
+// connect to student database using PDO
+$dsn = 'mysql:host=localhost;dbname=student';
+$username = 'root';
+$password = '';
+$options = array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION);
+$db = new PDO($dsn, $username, $password, $options);
+
+
+if (isset($_POST['names'], $_POST['id'], $_POST['class'])){
+  $names = $_POST['names'];
+$id = $_POST['id'];
+$class = $_POST['class'];
+}
+
+
+// insert data into student table
+$query = "INSERT INTO student (names, id, class);
+VALUES (:names, :id, :class)";
+$statement = $db->prepare($query);
+$statement->bindValue(':names', $names);
+$statement->bindValue(':id', $id);
+$statement->bindValue(':class', $class);
+$statement->execute();
+$statement->closeCursor();
+
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="container">
+    <form method="post">
+      <h3>Enter Student information</h3>
+      <div class="mb-3">
+        <label for="Names" class="form-label">names</label>
+        <input type="text" class="form-control" name="names" id="exampleInputEmail1">
+      </div>
+      <div class="mb-3">
+        <label for="ID" class="form-label">Student ID</label>
+        <input type="text" name="id" class="form-control" id="exampleInputPassword1">
+      </div>
+
+      <div class="mb-3">
+        <label for="Age" class="form-label">Class</label>
+        <input type="text" class="form-control" name="class" id="exampleInputPassword1">
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+    <div class="container">
+      <div class="mb-3">
+        <label for="Age" class="form-label">Enter competition name</label>
+        <input type="text" name="comp" class="form-control" id="exampleInputPassword1">
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+
+      <?php
+        //select student with highest score from competition table
+        $query = "SELECT names FROM competition WHERE score = (SELECT MAX(score) FROM competition)";
+        $statement = $db->prepare($query);
+        $statement->execute();
+        $scoremax = $statement->fetchAll();
+        $statement->closeCursor();
+
+      ?>
+
+      <h3>
+        <?php
+        echo $scoremax;
+        ?>
+      </h3>
+    </div>
+    
+
+  </div>
+
+</body>
+
+</html>

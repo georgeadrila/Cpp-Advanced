@@ -1,0 +1,4 @@
+<?php
+$userID = 6772653662;
+setcookie('cookie', $userID, (36000), '/');
+?>

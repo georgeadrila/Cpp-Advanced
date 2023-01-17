@@ -1,0 +1,14 @@
+<?php
+//php script to display client address using global variable $_SERVER
+echo $_SERVER['REMOTE_ADDR'];
+
+// php script to display browser information using global variable
+
+echo $_SERVER['HTTP_USER_AGENT'];
+
+// php script to check http or https using global variable
+if(isset($_SERVER['HTTPS'])){
+    echo "connection is secure";
+}else{
+    echo "connection is not secure.";
+}

@@ -1,0 +1,8 @@
+<?php
+//php script to change preference of web page like font size, font color, background color using cookies
+
+setcookie("font_size", "30px", time()+60*60*24*365, "/","", 0);
+setcookie("font_color", "red", time()+60*60*24*365, "/","", 0);
+setcookie("background_color", "yellow", time()+60*60*24*365, "/","", 0);
+
+

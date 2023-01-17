@@ -1,0 +1,10 @@
+<?php
+//how to start a session
+session_start();
+
+//how to access a session
+$_SESSION['name'];
+
+//how to destroy a session
+session_unset();
+session_destroy();
